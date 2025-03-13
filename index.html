@@ -54,10 +54,12 @@
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                         url('https://example.com/your-city-image.jpg');
             background-size: cover;
-            display: flex;
+            background-position: center;
+            display: flex !important;  /* Ensures it remains centered */
             align-items: center;
             justify-content: center;
             text-align: center;
+            flex-direction: column;
         }
 
         .hero h1 {
@@ -217,9 +219,10 @@
             });
         });
 
-        // ===== Mobile Touch Support =====
-        document.getElementById('hehehe-btn').addEventListener('touchend', () => {
-            alert('Congratulations Class 13.c! 🎉');
+        // ===== Prevent Jumping on Button Click =====
+        document.getElementById('hehehe-btn').addEventListener('click', (e) => {
+            e.preventDefault();  // Stops unwanted jumps
+            alert('A 13.c búcsúzik! Sziasztok és jók legyetek! ツ');
         });
 
         // ===== Initial Load =====
