@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Mobile-first viewport settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>A 13.c weboldala</title>
     <link rel="icon" type="image/png" href="IMG_2062.jpg" />
-    
+
     <style>
-        /* ===== Base Styles ===== */
+        /* ===== Global Styles ===== */
         * {
             margin: 0;
             padding: 0;
@@ -17,15 +16,16 @@
         }
 
         body {
-            background: #1a1a1a; /* Dark background */
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #ffffff;
         }
 
         /* ===== Navigation ===== */
         .navbar {
-            background: #2d2d2d;
+            background: rgba(0, 0, 0, 0.8);
             padding: 1rem;
-            border-bottom: 2px solid #4CAF50; /* Graduation green */
+            border-bottom: 2px solid #4CAF50;
         }
 
         .navbar ul {
@@ -53,10 +53,10 @@
         .hero {
             height: 80vh;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                        url('https://example.com/your-city-image.jpg');
+                        url('hero-image.jpg');
             background-size: cover;
             background-position: center;
-            display: flex !important;  /* Ensures it remains centered */
+            display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -66,101 +66,56 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            line-height: 1.2;
         }
 
-        /* ===== Graduation Button ===== */
-        .server-ip {
-            background: #4CAF50;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .server-ip:hover {
-            background: #45a049;
-            transform: translateY(-2px);
-        }
-
-        /* ===== Content Sections ===== */
+        /* ===== Sections ===== */
         .content-section {
             padding: 50px 20px;
             max-width: 1200px;
             margin: 0 auto;
             display: none;
+            text-align: center;
         }
 
         .content-section.active {
             display: block;
         }
 
-        .news-grid {
+        /* ===== Class Page - 18 Images Grid ===== */
+        .class-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
             margin-top: 30px;
         }
 
-        .news-card {
-            background: #2d2d2d;
-            padding: 20px;
+        .class-grid img {
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            border-left: 4px solid #4CAF50;
+        }
+
+        /* ===== Picture Page - Images & Videos ===== */
+        .media-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .media-gallery img, .media-gallery iframe {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
         }
 
         /* ===== Footer ===== */
         footer {
-            background: #2d2d2d;
+            background: rgba(0, 0, 0, 0.8);
             text-align: center;
             padding: 2rem;
             margin-top: 50px;
-        }
-
-        /* ===== Mobile Styles ===== */
-        @media (max-width: 768px) {
-            .hero {
-                height: 60vh;
-                padding: 20px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .navbar li {
-                margin: 0 10px;
-            }
-
-            .navbar a {
-                font-size: 0.9rem;
-            }
-
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-                padding: 0 15px;
-            }
-
-            .navbar ul {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            .server-ip {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
@@ -184,13 +139,44 @@
         </div>
     </section>
 
-    <!-- Content Sections (Keep original content structure) -->
-    <section id="home-content" class="content-section active">
-        <!-- ... (Keep existing content sections same as original) ... -->
+    <!-- Class Section - 18 Image Grid -->
+    <section id="Class-content" class="content-section">
+        <h2>Our Class Memories</h2>
+        <div class="class-grid">
+            <!-- 18 Images -->
+            <img src="class1.jpg" alt="Class Image 1">
+            <img src="class2.jpg" alt="Class Image 2">
+            <img src="class3.jpg" alt="Class Image 3">
+            <img src="class4.jpg" alt="Class Image 4">
+            <img src="class5.jpg" alt="Class Image 5">
+            <img src="class6.jpg" alt="Class Image 6">
+            <img src="class7.jpg" alt="Class Image 7">
+            <img src="class8.jpg" alt="Class Image 8">
+            <img src="class9.jpg" alt="Class Image 9">
+            <img src="class10.jpg" alt="Class Image 10">
+            <img src="class11.jpg" alt="Class Image 11">
+            <img src="class12.jpg" alt="Class Image 12">
+            <img src="class13.jpg" alt="Class Image 13">
+            <img src="class14.jpg" alt="Class Image 14">
+            <img src="class15.jpg" alt="Class Image 15">
+            <img src="class16.jpg" alt="Class Image 16">
+            <img src="class17.jpg" alt="Class Image 17">
+            <img src="class18.jpg" alt="Class Image 18">
+        </div>
     </section>
 
-    <!-- Rest of Sections (Same structure as original) -->
-    <!-- ... -->
+    <!-- Pictures Section - Images & Videos -->
+    <section id="Pictures-content" class="content-section">
+        <h2>Gallery</h2>
+        <div class="media-gallery">
+            <img src="pic1.jpg" alt="Picture 1">
+            <img src="pic2.jpg" alt="Picture 2">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            <img src="pic3.jpg" alt="Picture 3">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/oHg5SJYRHA0" allowfullscreen></iframe>
+            <img src="pic4.jpg" alt="Picture 4">
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2025 Pedroツ. All rights reserved.</p>
@@ -203,26 +189,23 @@
                 e.preventDefault();
                 const target = e.target.getAttribute('href').substring(1);
                 
-                // Toggle sections
                 document.querySelectorAll('.content-section, .hero').forEach(section => {
                     section.style.display = 'none';
                 });
-                
+
                 if (target === 'home') {
                     document.getElementById('home').style.display = 'block';
-                    document.getElementById('home-content').style.display = 'block';
                 } else {
-                    const targetSection = document.getElementById(`${target}-content`);
-                    if (targetSection) targetSection.style.display = 'block';
+                    document.getElementById(`${target}-content`).style.display = 'block';
                 }
-                
+
                 history.pushState(null, null, `#${target}`);
             });
         });
 
-        // ===== Prevent Jumping on Button Click =====
+        // ===== Button Click Event =====
         document.getElementById('hehehe-btn').addEventListener('click', (e) => {
-            e.preventDefault();  // Stops unwanted jumps
+            e.preventDefault();
             alert('A 13.c búcsúzik! Sziasztok és jók legyetek! ツ');
         });
 
@@ -231,7 +214,8 @@
             const hash = window.location.hash.substring(1) || 'home';
             if (hash === 'home') {
                 document.getElementById('home').style.display = 'block';
-                document.getElementById('home-content').style.display = 'block';
+            } else {
+                document.getElementById(`${hash}-content`).style.display = 'block';
             }
         });
     </script>
