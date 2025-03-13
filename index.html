@@ -1,11 +1,10 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <!-- Mobile-first viewport settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>A 13.c weboldala</title>
-    <link rel="icon" type="image/png" href="IMG_2062.jpg" />
+    <title>Class 13.c Graduation</title>
     
     <style>
         /* ===== Base Styles ===== */
@@ -55,12 +54,10 @@
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                         url('https://example.com/your-city-image.jpg');
             background-size: cover;
-            background-position: center;
-            display: flex !important;  /* Ensures it remains centered */
+            display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            flex-direction: column;
         }
 
         .hero h1 {
@@ -179,8 +176,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div>
-            <h1>A 13.c oldala<br>Max heheツ</h1>
-            <button class="server-ip" id="hehehe-btn">Click me ツ</button>
+            <h1>Class 13.c Graduation<br>MAX WAS HERE</h1>
+            <button class="server-ip" id="hehehe-btn">Celebrate! 🎓</button>
         </div>
     </section>
 
@@ -193,7 +190,7 @@
     <!-- ... -->
 
     <footer>
-        <p>&copy; 2025 Pedroツ. All rights reserved.</p>
+        <p>&copy; 2025 Class 13.c Graduation. All rights reserved.</p>
     </footer>
 
     <script>
@@ -212,18 +209,17 @@
                     document.getElementById('home').style.display = 'block';
                     document.getElementById('home-content').style.display = 'block';
                 } else {
-                    const targetSection = document.getElementById(${target}-content);
+                    const targetSection = document.getElementById(`${target}-content`);
                     if (targetSection) targetSection.style.display = 'block';
                 }
                 
-                history.pushState(null, null, #${target});
+                history.pushState(null, null, `#${target}`);
             });
         });
 
-        // ===== Prevent Jumping on Button Click =====
-        document.getElementById('hehehe-btn').addEventListener('click', (e) => {
-            e.preventDefault();  // Stops unwanted jumps
-            alert('A 13.c búcsúzik! Sziasztok és jók legyetek! ツ');
+        // ===== Mobile Touch Support =====
+        document.getElementById('hehehe-btn').addEventListener('touchend', () => {
+            alert('Congratulations Class 13.c! 🎉');
         });
 
         // ===== Initial Load =====
