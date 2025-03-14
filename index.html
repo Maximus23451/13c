@@ -179,6 +179,68 @@
                 font-size: 1rem;
             }
         }
+
+        /* Teacher-specific grid (similar to .class-grid but with centered text) */
+    .teacher-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Styling for media item to indicate interactivity */
+    .media-item {
+        cursor: pointer; /* Adds pointer cursor, not present in Code 1 */
+    }
+
+    /* Name tag below media items */
+    .name-tag {
+        margin-top: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    /* Frame for teacher media items */
+    .teacher-frame {
+        border: 5px solid #4CAF50;
+        border-radius: 10px;
+        padding: 10px;
+        display: inline-block;
+    }
+
+    /* Lightbox for image previews */
+    .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lightbox img {
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 10px;
+    }
+
+    .lightbox:target {
+        display: flex;
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        color: white;
+        text-decoration: none;
+    }
+        
     </style>
 </head>
 
@@ -201,39 +263,14 @@
 
     <section id="Class-content" class="content-section">
         <div class="class-grid">
-            <img src="placeholder.png" alt="Bács Róbert Lajos" class="media-item"><p>Zubán Máté Antal</p>
-            
-            <img src="placeholder.png" alt="Bajó Bence" class="media-item"><p>Zubán Máté Antal</p>
-            
-            <img src="placeholder.png" alt="Batu Tamás" class="media-item"><p>Zubán Máté Antal</p>
-            
-            <img src="placeholder.png" alt="Begela Balázs" class="media-item"><p>Zubán Máté Antal</p>
-           
-            <img src="placeholder.png" alt="Demény Dávid" class="media-item"><p>Zubán Máté Antal</p>
-          
-            <img src="placeholder.png" alt="Divinyi Balázs" class="media-item"><p>Zubán Máté Antal</p>
-           
-            <img src="placeholder.png" alt="Géczi Roland Levente" class="media-item"><p>Zubán Máté Antal</p>
-    
-            <img src="placeholder.png" alt="Kuruci Zoltán Levente" class="media-item"><p>Zubán Máté Antal</p>
-       
-            <img src="placeholder.png" alt="Mursich Levente" class="media-item"><p>Zubán Máté Antal</p>
-            
-            <img src="placeholder.png" alt="Mosoni Márk" class="media-item"><p>Zubán Máté Antal</p>
-       
-            <img src="placeholder.png" alt="Nagy Dávid" class="media-item"><p>Zubán Máté Antal</p>
-
-            <img src="placeholder.png" alt="Szabó Márton" class="media-item"><p>Zubán Máté Antal</p>
-     
-            <img src="placeholder.png" alt="Sándor Péter Ákos" class="media-item"><p>Zubán Máté Antal</p>
-            
-            <img src="placeholder.png" alt="Szilágyi István Márton" class="media-item"><p>Zubán Máté Antal</p>
-  
-            <img src="placeholder.png" alt="Szőke Bence" class="media-item"><p>Zubán Máté Antal</p>
- 
-            <img src="placeholder.png" alt="Urbán Dominik" class="media-item"><p>Zubán Máté Antal</p>
-            
-            <img src="zubi.jpg" alt="Zubán Máté Antal" class="media-item"><p>Zubán Máté Antal</p>
+            <div>
+                <a href="#lightbox1"><img src="placeholder.png" alt="Bács Róbert Lajos" class="media-item"></a>
+                <p class="name-tag">Bács Róbert Lajos</p>
+            </div>
+            <div>
+                <a href="#lightbox2"><img src="placeholder.png" alt="Bajó Bence" class="media-item"></a>
+                <p class="name-tag">Bajó Bence</p>
+            </div>
 
         </div>
 
