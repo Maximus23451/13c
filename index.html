@@ -21,6 +21,9 @@
         }
 
         .navbar {
+            display: flex; /* Changed to flex for positioning */
+            justify-content: space-between; /* Positions items at opposite ends */
+            align-items: center; /* Vertically centers items */
             background: #2d2d2d;
             padding: 1rem;
             border-bottom: 2px solid #4CAF50;
@@ -45,6 +48,11 @@
 
         .navbar a:hover {
             color: #4CAF50;
+        }
+
+        #view-count {
+            color: #ffffff; /* White text to match theme */
+            font-size: 1rem;
         }
 
         .hero {
@@ -253,6 +261,7 @@
             <li><a href="#Teachers">Teachers</a></li>
             <li><a href="#Pictures">Pictures</a></li>
         </ul>
+        <span id="view-count">Views: 0</span> <!-- Added view count here -->
     </nav>
 
     <section id="home" class="hero">
@@ -344,7 +353,7 @@
                 <p class="name-tag">Urbán Dominik</p>
             </div>
 
-             <div class="teacher-frame">
+            <div class="teacher-frame">
                 <a href="#lightbox17"><img src="zubi.jpg" alt="Zubán Máté Antal" class="media-item"></a>
                 <p class="name-tag">Zubán Máté Antal</p>
             </div>
@@ -437,7 +446,7 @@
         <img src="placeholder.png" alt="Nagy Dávid">
     </div>
 
-        <div id="lightbox12" class="lightbox">
+    <div id="lightbox12" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Szabó Márton">
     </div>
@@ -523,6 +532,14 @@
                 const targetSection = document.getElementById(`${hash}-content`);
                 if (targetSection) targetSection.style.display = 'block';
             }
+
+            // Fetch and update view count
+            fetch('https://api.countapi.xyz/hit/13c-website/view-count')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('view-count').textContent = 'Views: ' + data.value;
+                })
+                .catch(error => console.error('Error fetching view count:', error));
         });
     </script>
 </body>
