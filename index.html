@@ -101,6 +101,7 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             padding: 20px;
+            text-align: center;
         }
 
         .media-item {
@@ -240,14 +241,6 @@
                 font-size: 1rem;
             }
         }
-
-        .youtube-embed {
-    width: 100%;
-    height: 250px;
-    border-radius: 8px;
-    border: none;
-}
-        
     </style>
 </head>
 
@@ -270,11 +263,11 @@
 
     <section id="Class-content" class="content-section">
         <div class="class-grid">
-            <div>
+            <div class="teacher-frame">
                 <a href="#lightbox1"><img src="placeholder.png" alt="Bács Róbert Lajos" class="media-item"></a>
                 <p class="name-tag">Bács Róbert Lajos</p>
             </div>
-            <div>
+            <div class="teacher-frame">
                 <a href="#lightbox2"><img src="placeholder.png" alt="Bajó Bence" class="media-item"></a>
                 <p class="name-tag">Bajó Bence</p>
             </div>
@@ -308,11 +301,6 @@
             </div>
             <div>
                 <iframe class="youtube-embed" src="https://www.youtube.com/embed/SSbGSlEz5aM" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div>
-                <video class="media-item" controls>
-                    <source src="school-video.mp4" type="video/mp4">
-                </video>
             </div>
         </div>
     </section>
