@@ -109,6 +109,7 @@
             object-fit: cover;
             border-radius: 8px;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .media-item:hover {
@@ -117,6 +118,13 @@
 
         video.media-item {
             background: #000;
+        }
+
+        .youtube-embed {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            border: none;
         }
 
         .nickname-list {
@@ -138,6 +146,59 @@
             text-align: center;
             padding: 2rem;
             margin-top: 50px;
+        }
+
+        .teacher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .name-tag {
+            margin-top: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .teacher-frame {
+            border: 5px solid #4CAF50;
+            border-radius: 10px;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
         }
 
         @media (max-width: 768px) {
@@ -180,66 +241,12 @@
             }
         }
 
-        /* Teacher-specific grid (similar to .class-grid but with centered text) */
-    .teacher-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        padding: 20px;
-        text-align: center;
-    }
-
-    /* Styling for media item to indicate interactivity */
-    .media-item {
-        cursor: pointer; /* Adds pointer cursor, not present in Code 1 */
-    }
-
-    /* Name tag below media items */
-    .name-tag {
-        margin-top: 5px;
-        font-size: 1rem;
-        font-weight: bold;
-    }
-
-    /* Frame for teacher media items */
-    .teacher-frame {
-        border: 5px solid #4CAF50;
-        border-radius: 10px;
-        padding: 10px;
-        display: inline-block;
-    }
-
-    /* Lightbox for image previews */
-    .lightbox {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        display: none;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .lightbox img {
-        max-width: 80%;
-        max-height: 80%;
-        border-radius: 10px;
-    }
-
-    .lightbox:target {
-        display: flex;
-    }
-
-    .lightbox-close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        font-size: 2rem;
-        color: white;
-        text-decoration: none;
-    }
+        .youtube-embed {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    border: none;
+}
         
     </style>
 </head>
@@ -271,36 +278,23 @@
                 <a href="#lightbox2"><img src="placeholder.png" alt="Bajó Bence" class="media-item"></a>
                 <p class="name-tag">Bajó Bence</p>
             </div>
-
         </div>
 
         <div class="nickname-list">
             <div class="nickname-item">Example: Szabó Márton - Pedro, Max</div>
             <div class="nickname-item">Real Name - Nickname</div>
-            <!-- Add all nicknames here -->
         </div>
     </section>
 
-    <section id="Pictures-content" class="content-section">
-        <div class="media-grid">
-            <img src="FB_IMG_1732301317129.jpg" alt="Osztály tánc" class="media-item">
-            <video class="media-item" controls>
-                <source src="school-video.mp4" type="video/mp4">
-            </video>
-            <!-- Add more media -->
-        </div>
-    </section>
-
-
-        <section id="Teachers-content" class="content-section">
+    <section id="Teachers-content" class="content-section">
         <h2 style="text-align:center;">Teachers</h2>
         <div class="teacher-grid">
             <div class="teacher-frame">
-                <img src="placeholder.png" alt="Mr. Smith" class="media-item">
+                <a href="#lightbox4"><img src="placeholder.png" alt="Mr. Smith" class="media-item"></a>
                 <p class="name-tag">Mr. Smith</p>
             </div>
             <div class="teacher-frame">
-                <img src="placeholder.png" alt="Mrs. Johnson" class="media-item">
+                <a href="#lightbox5"><img src="placeholder.png" alt="Mrs. Johnson" class="media-item"></a>
                 <p class="name-tag">Mrs. Johnson</p>
             </div>
         </div>
@@ -313,13 +307,40 @@
                 <a href="#lightbox3"><img src="FB_IMG_1732301317129.jpg" alt="Osztály tánc" class="media-item"></a>
             </div>
             <div>
-                <iframe width="100%" height="250px" src="https://www.youtube.com/embed/SSbGSlEz5aM" frameborder="0" allowfullscreen></iframe>
+                <iframe class="youtube-embed" src="https://www.youtube.com/embed/SSbGSlEz5aM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div>
+                <video class="media-item" controls>
+                    <source src="school-video.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </section>
-    
+
+    <!-- Lightbox Elements -->
+    <div id="lightbox1" class="lightbox">
+        <a href="#" class="lightbox-close">×</a>
+        <img src="placeholder.png" alt="Bács Róbert Lajos">
+    </div>
+    <div id="lightbox2" class="lightbox">
+        <a href="#" class="lightbox-close">×</a>
+        <img src="placeholder.png" alt="Bajó Bence">
+    </div>
+    <div id="lightbox3" class="lightbox">
+        <a href="#" class="lightbox-close">×</a>
+        <img src="FB_IMG_1732301317129.jpg" alt="Osztály tánc">
+    </div>
+    <div id="lightbox4" class="lightbox">
+        <a href="#" class="lightbox-close">×</a>
+        <img src="placeholder.png" alt="Mr. Smith">
+    </div>
+    <div id="lightbox5" class="lightbox">
+        <a href="#" class="lightbox-close">×</a>
+        <img src="placeholder.png" alt="Mrs. Johnson">
+    </div>
+
     <footer>
-        <p>&copy; 2025 Pedroツ. All rights reserved.</p>
+        <p>© 2025 Pedroツ. All rights reserved.</p>
     </footer>
 
     <script>
