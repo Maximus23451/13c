@@ -534,19 +534,21 @@
             }
 
             // Fetch and update view count
-fetch('https://api.countapi.xyz/hit/maximus23451-13c-website/view-count')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        document.getElementById('view-count').textContent = 'Views: ' + (data?.value ?? 'Unavailable');
-    })
-    .catch(error => {
-        console.error('Error fetching view count:', error);
-        document.getElementById('view-count').textContent = 'Views: Unavailable';
+ fetch('https://api.countapi.xyz/hit/maximus23451-13c-website/view-count')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const viewCount = data?.value ?? 'Unavailable'; // Use optional chaining and fallback
+                document.getElementById('view-count').textContent = 'Views: ' + viewCount;
+            })
+            .catch(error => {
+                console.error('Error fetching view count:', error);
+                document.getElementById('view-count').textContent = 'Views: Unavailable';
+            });
     });
     </script>
 </body>
