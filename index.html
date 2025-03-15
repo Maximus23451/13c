@@ -7,7 +7,6 @@
     <meta property="og:image" content="IMG_2734.jpg" />
     <title>A 13.c weboldala</title>
     <link rel="icon" type="image/png" href="IMG_2062.jpg" />
-    
     <style>
         * {
             margin: 0;
@@ -15,39 +14,39 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
         body {
+            display: flex;
+            flex-direction: column;
             background: #1a1a1a;
             color: #ffffff;
         }
-
         .navbar {
             background: #2d2d2d;
             padding: 1rem;
             border-bottom: 2px solid #4CAF50;
+            flex-shrink: 0; /* Prevents the navbar from shrinking */
         }
-
         .navbar ul {
             display: flex;
             justify-content: center;
             list-style: none;
         }
-
         .navbar li {
             margin: 0 20px;
         }
-
         .navbar a {
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
             transition: color 0.3s ease;
         }
-
         .navbar a:hover {
             color: #4CAF50;
         }
-
         .hero {
             height: 80vh;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
@@ -58,15 +57,14 @@
             justify-content: center;
             text-align: center;
             flex-direction: column;
+            flex: 1; /* Allows the hero section to grow and fill available space */
         }
-
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             line-height: 1.2;
         }
-
         .hihi {
             background: #4CAF50;
             color: white;
@@ -78,26 +76,23 @@
             transition: all 0.3s ease;
             display: inline-block;
         }
-
         .hihi:hover {
             background: #45a049;
             transform: translateY(-2px);
         }
-
         .content-section {
             padding: 50px 20px;
             max-width: 1200px;
             margin: 0 auto;
             display: none;
+            flex: 1; /* Allows content sections to grow and fill available space */
         }
-
         .media-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px;
         }
-
         .class-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -105,7 +100,6 @@
             padding: 20px;
             text-align: center;
         }
-
         .media-item {
             width: 100%;
             height: 250px;
@@ -114,28 +108,23 @@
             transition: transform 0.3s ease;
             cursor: pointer;
         }
-
         .media-item:hover {
             transform: scale(1.05);
         }
-
         video.media-item {
             background: #000;
         }
-
         .youtube-embed {
             width: 100%;
             height: 250px;
             border-radius: 8px;
             border: none;
         }
-
         .nickname-list {
             padding: 20px;
             column-count: 2;
             column-gap: 30px;
         }
-
         .nickname-item {
             padding: 10px;
             margin-bottom: 8px;
@@ -143,14 +132,12 @@
             background: #333;
             border-radius: 5px;
         }
-
         footer {
             background: #2d2d2d;
             text-align: center;
             padding: 2rem;
-            margin-top: 50px;
+            flex-shrink: 0; /* Ensures the footer does not shrink */
         }
-
         .teacher-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -158,20 +145,17 @@
             padding: 20px;
             text-align: center;
         }
-
         .name-tag {
             margin-top: 5px;
             font-size: 1rem;
             font-weight: bold;
         }
-
         .teacher-frame {
             border: 5px solid #4CAF50;
             border-radius: 10px;
             padding: 10px;
             display: inline-block;
         }
-
         .lightbox {
             position: fixed;
             top: 0;
@@ -184,17 +168,14 @@
             align-items: center;
             z-index: 1000;
         }
-
         .lightbox img {
             max-width: 80%;
             max-height: 80%;
             border-radius: 10px;
         }
-
         .lightbox:target {
             display: flex;
         }
-
         .lightbox-close {
             position: absolute;
             top: 20px;
@@ -203,41 +184,33 @@
             color: white;
             text-decoration: none;
         }
-
         @media (max-width: 768px) {
             .hero {
                 height: 60vh;
                 padding: 20px;
             }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
-
             .navbar li {
                 margin: 0 10px;
             }
-
             .navbar a {
                 font-size: 0.9rem;
             }
-
             .nickname-list {
                 column-count: 1;
             }
         }
-
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
                 padding: 0 15px;
             }
-
             .navbar ul {
                 flex-wrap: wrap;
                 gap: 10px;
             }
-
             .hihi {
                 padding: 10px 20px;
                 font-size: 1rem;
@@ -245,7 +218,6 @@
         }
     </style>
 </head>
-
 <body>
     <nav class="navbar">
         <ul>
@@ -255,108 +227,88 @@
             <li><a href="#Pictures">Pictures</a></li>
         </ul>
     </nav>
-
     <section id="home" class="hero">
         <div>
             <h1>A 13.c oldala<br>Max heheツ</h1>
             <button class="hihi" id="hehehe-btn">Click me ツ</button>
         </div>
     </section>
-
     <section id="Class-content" class="content-section">
         <div class="class-grid">
             <div class="teacher-frame">
                 <a href="#lightbox1"><img src="placeholder.png" alt="Bács Róbert Lajos" class="media-item"></a>
                 <p class="name-tag">Bács Róbert Lajos</p>
             </div>
-            
             <div class="teacher-frame">
                 <a href="#lightbox2"><img src="placeholder.png" alt="Bajó Bence" class="media-item"></a>
                 <p class="name-tag">Bajó Bence</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox3"><img src="placeholder.png" alt="Batu Tamás" class="media-item"></a>
                 <p class="name-tag">Batu Tamás</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox4"><img src="placeholder.png" alt="Begela Balázs" class="media-item"></a>
                 <p class="name-tag">Begela Balázs</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox5"><img src="placeholder.png" alt="Demény Dávid" class="media-item"></a>
                 <p class="name-tag">Demény Dávid</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox6"><img src="placeholder.png" alt="Divinyi Balázs" class="media-item"></a>
                 <p class="name-tag">Divinyi Balázs</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox7"><img src="placeholder.png" alt="Géczi Roland Levente" class="media-item"></a>
                 <p class="name-tag">Géczi Roland Levente</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox8"><img src="placeholder.png" alt="Kuruci Zoltán Levente" class="media-item"></a>
                 <p class="name-tag">Kuruci Zoltán Levente</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox9"><img src="placeholder.png" alt="Mursich Levente" class="media-item"></a>
                 <p class="name-tag">Mursich Levente</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox10"><img src="placeholder.png" alt="Mosoni Márk" class="media-item"></a>
                 <p class="name-tag">Mosoni Márk</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox11"><img src="placeholder.png" alt="Nagy Dávid" class="media-item"></a>
                 <p class="name-tag">Nagy Dávid</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox12"><img src="placeholder.png" alt="Szabó Márton" class="media-item"></a>
                 <p class="name-tag">Szabó Márton</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox13"><img src="placeholder.png" alt="Sándor Péter Ákos" class="media-item"></a>
                 <p class="name-tag">Sándor Péter Ákos</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox14"><img src="placeholder.png" alt="Szilágyi István Márton" class="media-item"></a>
                 <p class="name-tag">Szilágyi István Márton</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox15"><img src="placeholder.png" alt="Szőke Bence" class="media-item"></a>
                 <p class="name-tag">Szőke Bence</p>
             </div>
-
             <div class="teacher-frame">
                 <a href="#lightbox16"><img src="placeholder.png" alt="Urbán Dominik" class="media-item"></a>
                 <p class="name-tag">Urbán Dominik</p>
             </div>
-
              <div class="teacher-frame">
                 <a href="#lightbox17"><img src="zubi.jpg" alt="Zubán Máté Antal" class="media-item"></a>
                 <p class="name-tag">Zubán Máté Antal</p>
             </div>
         </div>
-
         <div class="nickname-list">
             <div class="nickname-item">Example: Szabó Márton - Pedro, Max</div>
             <div class="nickname-item">Real Name - Nickname</div>
         </div>
     </section>
-
     <section id="Teachers-content" class="content-section">
         <h2 style="text-align:center;">Teachers</h2>
         <div class="teacher-grid">
@@ -370,7 +322,6 @@
             </div>
         </div>
     </section>
-
     <section id="Pictures-content" class="content-section">
         <h2 style="text-align:center;">Pictures & Videos</h2>
         <div class="media-grid">
@@ -382,33 +333,27 @@
             </div>
         </div>
     </section>
-
     <!-- Lightbox Elements -->
     <div id="lightbox1" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Bács Róbert Lajos">
     </div>
-    
     <div id="lightbox2" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Bajó Bence">
     </div>
-    
     <div id="lightbox3" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Batu Tamás">
     </div>
-    
     <div id="lightbox4" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Begela Balázs">
     </div>
-    
     <div id="lightbox5" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Demény Dávid">
     </div>
-    
     <div id="lightbox6" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Divinyi Balázs">
@@ -417,107 +362,86 @@
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Géczi Roland Levente">
     </div>
-    
     <div id="lightbox8" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Kuruci Zoltán Levente">
     </div>
-
     <div id="lightbox9" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Mursich Levente">
     </div>
-
     <div id="lightbox10" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Mosoni Márk">
     </div>
-
     <div id="lightbox11" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Nagy Dávid">
     </div>
-
         <div id="lightbox12" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Szabó Márton">
     </div>
-
     <div id="lightbox13" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Sándor Péter Ákos">
     </div>
-
     <div id="lightbox14" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Szilágyi István Márton">
     </div>
-
     <div id="lightbox15" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Szőke Bence">
     </div>
-
     <div id="lightbox16" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="placeholder.png" alt="Urbán Dominik">
     </div>
-
     <div id="lightbox17" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="zubi.jpg" alt="Zubán Máté Antal">
     </div>
-
     <div id="lightbox18" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="FB_IMG_1732301317129.jpg" alt="Osztály tánc">
     </div>
-    
     <div id="lightbox19" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="4692_res300x450.jpg" alt="Répás Sándor">
     </div>
-    
     <div id="lightbox20" class="lightbox">
         <a href="#" class="lightbox-close">×</a>
         <img src="IMG_1959.jpg" alt="TEST">
     </div>
-
     <footer>
         <p>© 2025 Pedroツ. All rights reserved.</p>
     </footer>
-
     <script>
         document.querySelectorAll('.navbar a').forEach(link => {
             link.addEventListener('click', e => {
                 e.preventDefault();
                 const target = e.target.getAttribute('href').substring(1);
-                
                 document.querySelectorAll('.content-section, .hero').forEach(section => {
                     section.style.display = 'none';
                 });
-                
                 if (target === 'home') {
                     document.getElementById('home').style.display = 'flex';
                 } else {
                     document.getElementById(`${target}-content`).style.display = 'block';
                 }
-                
                 history.pushState(null, null, `#${target}`);
             });
         });
-
         document.getElementById('hehehe-btn').addEventListener('click', (e) => {
             e.preventDefault();
             alert('A 13.c búcsúzik! Sziasztok és jók legyetek! ツ');
         });
-
         window.addEventListener('load', () => {
             const hash = window.location.hash.substring(1) || 'home';
             document.querySelectorAll('.content-section, .hero').forEach(section => {
                 section.style.display = 'none';
             });
-            
             if (hash === 'home') {
                 document.getElementById('home').style.display = 'flex';
             } else {
