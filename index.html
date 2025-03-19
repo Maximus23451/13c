@@ -138,6 +138,33 @@
             padding: 2rem;
             flex-shrink: 0;
         }
+.rainbow-frame {
+    border: 4px solid;
+    border-radius: 8px; /* optional for rounded corners */
+    padding: 20px; /* optional inner spacing */
+    animation: rainbow 4s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        border-color: red;
+    }
+    20% {
+        border-color: orange;
+    }
+    40% {
+        border-color: yellow;
+    }
+    60% {
+        border-color: green;
+    }
+    80% {
+        border-color: blue;
+    }
+    100% {
+        border-color: purple;
+    }
+}
         .teacher-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -200,6 +227,12 @@
         }
 		.pedro-frame {
             border: 5px solid #4f0ca5;
+            border-radius: 10px;
+            padding: 10px;
+            display: inline-block;
+        }
+		.zubi-frame {
+            border: 5px solid #1D2842;
             border-radius: 10px;
             padding: 10px;
             display: inline-block;
@@ -363,7 +396,7 @@
                 <p class="name-tag">Nagy Dávid</p>
 				<p class="nickname-item">Dave</p>
             </div>
-            <div class="pedro-frame">
+            <div class="rainbow-frame">
                 <a href="#lightbox12"><img src="portrek/max.jpg" alt="Szabó Márton" class="media-item"></a>
                 <p class="name-tag">Szabó Márton</p>
 				<p class="nickname-item">Pedro</p>
@@ -388,7 +421,7 @@
                 <p class="name-tag">Urbán Dominik</p>
 				<p class="nickname-item">Urbi</p>
             </div>
-            <div class="teacher-frame">
+            <div class="zubi-frame">
                 <a href="#lightbox17"><img src="portrek/zubi.jpg" alt="Zubán Máté Antal" class="media-item"></a>
                 <p class="name-tag">Zubán Máté Antal</p>
 				<p class="nickname-item">Zubi</p>
@@ -414,7 +447,7 @@
             <div class="teacher-frame">
                 <a href="#lightbox18"><img src="pics/sztanc2.jpg" alt="Osztály tánc" class="media-item"></a>
             </div>
-            <div class="teacher-frame">
+            <div class="rainbow-frame">
                 <iframe class="youtube-embed" src="https://www.youtube.com/embed/SSbGSlEz5aM" frameborder="0" allowfullscreen></iframe>
             </div>
 		<div class="teacher-frame">
