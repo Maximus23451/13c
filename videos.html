@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Videók | 13C</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script defer src="script.js"></script>
+  <style>
+    html, body { height: 100%; }
+    body { background: linear-gradient(180deg, #0f0f1b, #1a1a2e); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .neon-text { color: #a78bfa; text-shadow: 0 0 5px #a78bfa, 0 0 10px #7c3aed; }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-[#111] bg-opacity-80 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold text-purple-300">ツ<span class="text-blue-400"></span></h1>
+      <nav id="main-nav" class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="students.html" class="hover:text-blue-400">Diákok</a>
+        <a href="teachers.html" class="hover:text-blue-400">Tanárok</a>
+        <a href="videos.html" class="hover:text-blue-400">Videók</a>
+        <a href="kepek.html" class="hover:text-blue-400">Képek</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">☰</button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+      <a href="index.html" class="block hover:text-blue-400">Home</a>
+      <a href="students.html" class="block hover:text-blue-400">Diákok</a>
+      <a href="teachers.html" class="block hover:text-blue-400">Tanárok</a>
+      <a href="videos.html" class="block hover:text-blue-400">Videók</a>
+      <a href="kepek.html" class="block hover:text-blue-400">Képek</a>
+    </div>
+  </header>
+
+  <main class="py-20 px-6 max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold neon-text text-center mb-10" data-sr>Videok 🎥</h2>
+    <div class="space-y-12" data-sr>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe class="w-full h-72 rounded shadow-lg" src="https://www.youtube.com/embed/SSbGSlEz5aM" title="Szalagacató 1" allowfullscreen></iframe>
+      </div>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe class="w-full h-72 rounded shadow-lg" src="https://www.youtube.com/embed/6RdvONNzMEE" title="Szalagacató 2" allowfullscreen></iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-6 text-center bg-black text-gray-400 text-sm mt-auto">
+    © 2025 Pedroツ. All rights reserved.
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('[data-sr]', {
+      delay: 100,
+      distance: '40px',
+      duration: 800,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200,
+    });
+  </script>
+</body>
+</html>

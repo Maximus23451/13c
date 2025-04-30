@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Képek | 13C</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script defer src="script.js"></script>
+  <style>
+    html, body { height: 100%; }
+    body { background: linear-gradient(180deg, #0f0f1b, #1a1a2e); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .neon-text { color: #a78bfa; text-shadow: 0 0 5px #a78bfa, 0 0 10px #7c3aed; }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-[#111] bg-opacity-80 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold text-purple-300">ツ<span class="text-blue-400"></span></h1>
+      <nav id="main-nav" class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="students.html" class="hover:text-blue-400">Diákok</a>
+        <a href="teachers.html" class="hover:text-blue-400">Tanárok</a>
+        <a href="videos.html" class="hover:text-blue-400">Videók</a>
+        <a href="kepek.html" class="hover:text-blue-400">Képek</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">☰</button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+      <a href="index.html" class="block hover:text-blue-400">Home</a>
+      <a href="students.html" class="block hover:text-blue-400">Diákok</a>
+      <a href="teachers.html" class="block hover:text-blue-400">Tanárok</a>
+      <a href="videos.html" class="block hover:text-blue-400">Videók</a>
+      <a href="kepek.html" class="block hover:text-blue-400">Képek</a>
+    </div>
+  </header>
+
+  <main class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold neon-text text-center mb-10" data-sr>Képgaléria 📸</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery">
+
+      <!-- Large Photo Card -->
+<div class="bg-[#1f1f1f] p-2 rounded shadow-lg">
+  <button class="open-lightbox" data-id="Fotó 1">
+    <img src="https://images.guns.lol/rt7Df.jpg" alt="Fotó 1" class="rounded w-full object-cover h-64 hover:opacity-90 transition">
+  </button>
+  <p class="font-bold text-purple-300"></p>
+  <p class="text-blue-400 text-sm">""</p>
+</div>
+
+<div class="bg-[#1f1f1f] p-2 rounded shadow-lg">
+  <button class="open-lightbox" data-id="Fotó 2">
+    <img src="https://images.guns.lol/6Fu1T.jpg" alt="Fotó 2" class="rounded w-full object-cover h-64 hover:opacity-90 transition">
+  </button>
+  <p class="font-bold text-purple-300"></p>
+  <p class="text-blue-400 text-sm">""</p>
+</div>
+
+      <!-- More blocks can be added similarly -->
+
+    </div>
+  </main>
+
+  <!-- Lightboxes -->
+<div id="lightbox-Fotó 1" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/rt7Df.jpg" alt="" class="max-w-full h-auto rounded">
+  </div>
+</div>
+
+<div id="lightbox-Fotó 2" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/6Fu1T.jpg" alt="" class="max-w-full h-auto rounded">
+  </div>
+</div>
+
+  <footer class="py-6 text-center bg-black text-gray-400 text-sm mt-auto">
+    © 2025 Pedroツ. All rights reserved. 
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('[data-sr]', {
+      delay: 100,
+      distance: '40px',
+      duration: 800,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200,
+    });
+
+    // Lightbox controller
+    window.addEventListener('hashchange', () => {
+      document.querySelectorAll('.lightbox').forEach(lb => lb.classList.add('hidden'));
+      const id = location.hash.replace('#', '');
+      const target = document.getElementById(`lightbox-${id}`);
+      if (target) target.classList.remove('hidden');
+    });
+
+    document.querySelectorAll('.lightbox-close').forEach(btn => {
+      btn.addEventListener('click', () => {
+        location.hash = '';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diákok | 13C</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script defer src="script.js"></script>
+  <style>
+    html, body { height: 100%; }
+    body { background: linear-gradient(180deg, #0f0f1b, #1a1a2e); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .neon-text { color: #a78bfa; text-shadow: 0 0 5px #a78bfa, 0 0 10px #7c3aed; }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-[#111] bg-opacity-80 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold text-purple-300">ツ<span class="text-blue-400"></span></h1>
+      <nav id="main-nav" class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="students.html" class="hover:text-blue-400">Diákok</a>
+        <a href="teachers.html" class="hover:text-blue-400">Tanárok</a>
+        <a href="videos.html" class="hover:text-blue-400">Videók</a>
+        <a href="kepek.html" class="hover:text-blue-400">Képek</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">☰</button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+      <a href="index.html" class="block hover:text-blue-400">Home</a>
+      <a href="students.html" class="block hover:text-blue-400">Diákok</a>
+      <a href="teachers.html" class="block hover:text-blue-400">Tanárok</a>
+      <a href="videos.html" class="block hover:text-blue-400">Videók</a>
+      <a href="kepek.html" class="block hover:text-blue-400">Képek</a>
+    </div>
+  </header>
+
+  <main class="py-20 px-6 max-w-7xl mx-auto">
+  <h2 class="text-4xl font-bold neon-text text-center mb-10" data-sr>Diákok</h2>
+    <p class="text-gray-300 text-center text-lg leading-relaxed" data-sr>
+      
+    </p>
+  <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    <!-- Card 1 -->
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Robux">
+    <img src="https://images.guns.lol/0bKOU.jpg" alt="Robux" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Bács Róbert Lajos</p>
+  <p class="text-blue-400 text-sm">"Robux"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Diego">
+    <img src="https://images.guns.lol/1tMdS.jpg" alt="Diego" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Bajó Bence</p>
+  <p class="text-blue-400 text-sm">"Diego"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Batu">
+    <img src="https://images.guns.lol/1QiFA.jpg" alt="Batu" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Batu Tamás</p>
+  <p class="text-blue-400 text-sm">"Batu"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Begi">
+    <img src="https://images.guns.lol/v7ieR.jpg" alt="Begi" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Begela Balázs</p>
+  <p class="text-blue-400 text-sm">"Begi"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Ying">
+    <img src="https://images.guns.lol/B0x45.jpg" alt="Ying" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Demény Dávid</p>
+  <p class="text-blue-400 text-sm">"Ying"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Diaz">
+    <img src="https://images.guns.lol/HTzOt.jpg" alt="Diaz" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Divinyi Balázs</p>
+  <p class="text-blue-400 text-sm">"Diaz"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Rezső">
+    <img src="https://images.guns.lol/GppCG.jpg" alt="Rezső" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Géczi Roland Levente</p>
+  <p class="text-blue-400 text-sm">"Rezső"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Kuci">
+    <img src="https://images.guns.lol/Byjvk.jpg" alt="Kuci" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Kuruci Zoltán Levente</p>
+  <p class="text-blue-400 text-sm">"Kuci"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Leves">
+    <img src="https://images.guns.lol/PhT9M.jpg" alt="Leves" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Mursich Levente</p>
+  <p class="text-blue-400 text-sm">"Leves"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Mosi">
+    <img src="https://images.guns.lol/WG1Rz.jpg" alt="Mosi" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Mosoni Márk</p>
+  <p class="text-blue-400 text-sm">"Mosi"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Dave">
+    <img src="https://images.guns.lol/my0na.jpg" alt="Dave" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Nagy Dávid</p>
+  <p class="text-blue-400 text-sm">"Dave"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Spá">
+    <img src="https://images.guns.lol/XlAVL.jpg" alt="Spá" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Sándor Péter Ákos</p>
+  <p class="text-blue-400 text-sm">"Spá"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Pedro">
+    <img src="https://images.guns.lol/iKy7I.jpg" alt="Pedro" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Szabó Márton</p>
+  <p class="text-blue-400 text-sm">"Pedro"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Spongya">
+    <img src="https://images.guns.lol/KqTXE.jpg" alt="Spongya" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Szilágyi István Márton</p>
+  <p class="text-blue-400 text-sm">"Spongya"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Yang">
+    <img src="https://images.guns.lol/OivH4.jpg" alt="Yang" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Szőke Bence</p>
+  <p class="text-blue-400 text-sm">"Yang"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Urbi">
+    <img src="https://images.guns.lol/caEpS.jpg" alt="Urbi" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Urbán Dominik</p>
+  <p class="text-blue-400 text-sm">"Urbi"</p>
+</div>
+<div class="bg-[#1f1f1f] rounded p-4 text-center shadow hover:shadow-purple-500 transition">
+  <button class="open-lightbox" data-id="Zubi">
+    <img src="https://images.guns.lol/LL0gg.jpg" alt="Zubi" class="rounded w-full h-48 object-cover mb-2">
+  </button>
+  <p class="font-bold text-purple-300">Zubán Máté Antal</p>
+  <p class="text-blue-400 text-sm">"Zubi"</p>
+</div>
+    </div>
+  </main>
+
+<!-- Lightbox -->
+<div id="lightbox-Robux" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/0bKOU.jpg" alt="Robux" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Diego" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/1tMdS.jpg" alt="Diego" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Batu" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/1QiFA.jpg" alt="Batu" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Begi" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/v7ieR.jpg" alt="Begi" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Ying" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/B0x45.jpg" alt="Ying" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Diaz" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/HTzOt.jpg" alt="Diaz" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Rezső" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/GppCG.jpg" alt="Rezső" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Kuci" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/Byjvk.jpg" alt="Kuci" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Leves" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/PhT9M.jpg" alt="Leves" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Mosi" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/WG1Rz.jpg" alt="Mosi" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Dave" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/my0na.jpg" alt="Dave" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Spá" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/XlAVL.jpg" alt="Spá" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Pedro" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/iKy7I.jpg" alt="Pedro" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Spongya" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/KqTXE.jpg" alt="Spongya" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Yang" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/OivH4.jpg" alt="Yang" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Urbi" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/caEpS.jpg" alt="Urbi" class="max-w-full h-auto rounded">
+  </div>
+</div>
+<div id="lightbox-Zubi" class="lightbox fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+  <div class="relative bg-[#1a1a2e] p-4 rounded shadow-lg max-w-3xl">
+    <button class="absolute top-2 right-4 text-white text-3xl close-lightbox">×</button>
+    <img src="https://images.guns.lol/LL0gg.jpg" alt="Zubi" class="max-w-full h-auto rounded">
+  </div>
+</div>
+
+
+  <footer class="py-6 text-center bg-black text-gray-400 text-sm mt-auto">
+    © 2025 Pedroツ. All rights reserved. 
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('[data-sr]', {
+      delay: 100,
+      distance: '40px',
+      duration: 800,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200,
+    });
+  </script>
+</body>
+</html>

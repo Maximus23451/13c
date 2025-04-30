@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A 13.c weboldala</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script defer src="script.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: linear-gradient(180deg, #0f0f1b, #1a1a2e); font-family: 'Poppins', sans-serif; }
+    .neon-text { color: #a78bfa; text-shadow: 0 0 5px #a78bfa, 0 0 10px #7c3aed; }
+    .neon-btn:hover { box-shadow: 0 0 10px #22d3ee, 0 0 20px #38bdf8; }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-[#111] bg-opacity-80 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold text-purple-300">ツ<span class="text-blue-400"></span></h1>
+      <nav id="main-nav" class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="students.html" class="hover:text-blue-400">Diákok</a>
+        <a href="teachers.html" class="hover:text-blue-400">Tanárok</a>
+        <a href="videos.html" class="hover:text-blue-400">Videók</a>
+        <a href="kepek.html" class="hover:text-blue-400">Képek</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">☰</button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+      <a href="index.html" class="block hover:text-blue-400">Home</a>
+      <a href="students.html" class="block hover:text-blue-400">Diákok</a>
+      <a href="teachers.html" class="block hover:text-blue-400">Tanárok</a>
+      <a href="videos.html" class="block hover:text-blue-400">Videók</a>
+      <a href="kepek.html" class="block hover:text-blue-400">Képek</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <div>
+      <h2 class="text-4xl md:text-6xl font-bold neon-text mb-4" data-sr>A 13.c oldala ツ</h2>
+      <p class="text-lg text-gray-300 max-w-xl mx-auto mb-6" data-sr>
+        
+      </p>
+      <button id="learn-btn" class="px-6 py-3 bg-blue-500 text-white font-semibold rounded neon-btn transition" data-sr>
+        Click me ツ
+      </button>
+      <p id="learn-text" class="hidden mt-4 text-purple-300">A 13.c búcsúzik! Sziasztok és jók legyetek! ツ</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center bg-black text-gray-400 text-sm">
+    © 2025 Pedroツ. All rights reserved.
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('[data-sr]', {
+      delay: 100,
+      distance: '40px',
+      duration: 800,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200,
+    });
+  </script>
+</body>
+</html>
