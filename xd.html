@@ -17,7 +17,7 @@
 </head>
 <body class="text-white">
 
-  <!-- Navbar (same as index) -->
+  <!-- Navbar (always visible) -->
   <header class="sticky top-0 z-50 bg-[#111] bg-opacity-80 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
       <h1 class="text-xl font-bold text-purple-300">ツ<span class="text-blue-400"></span></h1>
@@ -49,16 +49,81 @@
       <p id="error-msg" class="mt-4 error hidden"></p>
     </div>
 
-    <div id="secret-content" class="hidden mt-12 max-w-2xl w-full bg-[#181826] rounded-lg shadow-xl p-8 border border-purple-700">
-      <h2 class="text-3xl font-bold neon-text mb-4">Üdv a Titkos Oldalon! 😎</h2>
-      <p class="text-gray-300 mb-6">Ez az oldal csak azoknak elérhető, akik tudják a jelszót...</p>
-      <!-- IDE RAKD A TITKOS TARTALMAT! -->
-      <ul class="list-disc list-inside text-left text-purple-300">
-        <li>Titkos infó #1</li>
-        <li>Titkos infó #2</li>
-        <li>Bármi mást is ide írhatsz!</li>
-      </ul>
+<div id="secret-content" class="hidden mt-12 max-w-2xl w-full bg-[#181826] rounded-lg shadow-xl p-8 border border-purple-700">
+  <h2 class="text-3xl font-bold neon-text mb-4">Üdv a Titkos Oldalon! 😎</h2>
+  <p class="text-gray-300 mb-6">Ez az oldal csak azoknak elérhető, akik tudják a jelszót...</p>
+  
+  <!-- Video Players -->
+  <div class="mb-12">
+    <h3 class="text-2xl font-semibold neon-text mb-4">Videók</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- 10 video players, #4 gets your video link -->
+      <video controls class="w-full rounded shadow-md border border-blue-400 bg-black">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Videó nem érhető el.
+      </video>
+      <video controls class="w-full rounded shadow-md border border-blue-400 bg-black">
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Videó nem érhető el.
+      </video>
+      <video controls class="w-full rounded shadow-md border border-blue-400 bg-black">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Videó nem érhető el.
+      </video>
+      <!-- #4 - Your special video -->
+      <video controls class="w-full rounded shadow-md border-2 border-purple-500 bg-black">
+        <source src="https://images.guns.lol/jbECR.mp4" type="video/mp4">
+        Videó nem érhető el.
+      </video>
+      <video controls class="w-full rounded shadow-md border border-blue-400 bg-black">
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Videó nem érhető el.
+      </video>
+      <video controls class="w-full rounded shadow-md border border-blue-400 bg-black">
+        <source src="https://images.guns.lol/PH2K7.mov" type="video/mp4">
+        Videó nem érhető el.
+      </video>
+      <video controls class="w-full rounded shadow-md border border-blue-400 bg-black">
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Videó nem érhető el.
+      </video>
+      <video controls class="w-full rounded shadow-md border border-blue-400 bg-black">
+        <source src="https://images.guns.lol/xbYYc.mp4" type="video/mp4">
+        Videó nem érhető el.
+      </video>
+      <video controls class="w-full rounded shadow-md border border-blue-400 bg-black">
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Videó nem érhető el.
+      </video>
+      <video controls class="w-full rounded shadow-md border border-blue-400 bg-black">
+        <source src="https://cdn.discordapp.com/attachments/1359156180340965457/1387250088610627744/SPOILER_J9jXfANzPrU32R0L.mp4?ex=685ca8d2&is=685b5752&hm=3dc63c77ede8bdf7b0c07f627a062121bdcd928d0d8fa617a523d07b9a2add49&" type="video/mp4">
+        Videó nem érhető el.
+      </video>
     </div>
+  </div>
+
+  <!-- Picture Frames -->
+  <div>
+    <h3 class="text-2xl font-semibold neon-text mb-4">Képek</h3>
+    <div class="grid grid-cols-2 gap-4">
+      <img src="https://images.guns.lol/acYHk.jpg" onclick="showModal(this.src)">
+      <img src="https://images.guns.lol/8xf2t.jpg" onclick="showModal(this.src)">
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=300" alt="Kép 3" class="rounded shadow-md border-2 border-purple-400 cursor-pointer transition-transform transform hover:scale-105" onclick="showModal(this.src)">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=facearea&w=400&h=300" alt="Kép 4" class="rounded shadow-md border-2 border-purple-400 cursor-pointer transition-transform transform hover:scale-105" onclick="showModal(this.src)">
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imgModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+    <span onclick="hideModal()" class="absolute top-4 right-8 text-3xl cursor-pointer text-white font-bold">&times;</span>
+    <img id="modalImg" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-2xl border-4 border-purple-500" alt="Nagy kép">
+  </div>
+
+  <!-- Return to Home Button -->
+  <div class="mt-8 flex justify-center">
+    <a href="index.html" class="px-6 py-3 bg-blue-500 text-white font-semibold rounded neon-btn transition hover:bg-blue-600">Vissza a főoldalra</a>
+  </div>
+</div>
   </section>
 
   <!-- Footer -->
@@ -106,6 +171,15 @@
     passwordInput.addEventListener('keypress', function(e) {
       if (e.key === 'Enter') checkPassword();
     });
+	  // Modal for images
+  function showModal(src) {
+    document.getElementById('modalImg').src = src;
+    document.getElementById('imgModal').classList.remove('hidden');
+  }
+  function hideModal() {
+    document.getElementById('imgModal').classList.add('hidden');
+    document.getElementById('modalImg').src = "";
+  }
   </script>
 </body>
 </html>
