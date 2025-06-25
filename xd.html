@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>XD | 13C</title>
+  <title>XD Titkos Oldal</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script defer src="script.js"></script>
   <style>
-    html, body { height: 100%; }
-    body { background: linear-gradient(180deg, #0f0f1b, #1a1a2e); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; }
-    main { flex: 1; }
+    html { scroll-behavior: smooth; }
+    body { background: linear-gradient(180deg, #0f0f1b, #1a1a2e); font-family: 'Poppins', sans-serif; }
     .neon-text { color: #a78bfa; text-shadow: 0 0 5px #a78bfa, 0 0 10px #7c3aed; }
+    .neon-btn:hover { box-shadow: 0 0 10px #22d3ee, 0 0 20px #38bdf8; }
+    .hidden { display: none !important; }
+    .error { color: #f87171; }
   </style>
 </head>
-<body>
+<body class="text-white">
+
+  <!-- Navbar (same as index) -->
   <header class="sticky top-0 z-50 bg-[#111] bg-opacity-80 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
       <h1 class="text-xl font-bold text-purple-300">ツ<span class="text-blue-400"></span></h1>
@@ -34,23 +37,75 @@
       <a href="videos.html" class="block hover:text-blue-400">Videók</a>
       <a href="kepek.html" class="block hover:text-blue-400">Képek</a>
     </div>
-     <div id="secret-content">
-    <h1>Welcome to the XD Secret Page!</h1>
-    <p>This content is password gated (but not really secure).</p>
-  </div>
   </header>
+
+  <!-- Password Gate -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <div id="password-box" class="mt-24 max-w-md w-full bg-[#181826] rounded-lg shadow-lg p-8 border border-purple-500">
+      <h2 class="text-3xl font-bold neon-text mb-4">Titkos oldal 🔒</h2>
+      <p class="mb-4 text-gray-300">Add meg a jelszót a belépéshez!</p>
+      <input id="password-input" type="password" placeholder="Jelszó..." class="w-full px-4 py-2 rounded bg-[#22223a] text-white border border-blue-400 focus:outline-none mb-4" autocomplete="off" />
+      <button id="password-btn" class="w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded neon-btn transition">Belépés</button>
+      <p id="error-msg" class="mt-4 error hidden"></p>
+    </div>
+
+    <div id="secret-content" class="hidden mt-12 max-w-2xl w-full bg-[#181826] rounded-lg shadow-xl p-8 border border-purple-700">
+      <h2 class="text-3xl font-bold neon-text mb-4">Üdv a Titkos Oldalon! 😎</h2>
+      <p class="text-gray-300 mb-6">Ez az oldal csak azoknak elérhető, akik tudják a jelszót...</p>
+      <!-- IDE RAKD A TITKOS TARTALMAT! -->
+      <ul class="list-disc list-inside text-left text-purple-300">
+        <li>Titkos infó #1</li>
+        <li>Titkos infó #2</li>
+        <li>Bármi mást is ide írhatsz!</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center bg-black text-gray-400 text-sm">
+    © 2025 Pedroツ. All rights reserved.
+  </footer>
+
   <script>
-    const PASSWORD = "Macko";
-    const userInput = prompt("Enter the password to access this page:");
-    if (userInput === PASSWORD) {
-      document.getElementById('secret-content').style.display = 'block';
-    } else {
-      document.write("<h2>Incorrect password.</h2>");
+    // Navbar mobile toggle
+    document.getElementById('menu-toggle').onclick = function() {
+      var menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    };
+
+    ScrollReveal().reveal('[data-sr]', {
+      delay: 100,
+      distance: '40px',
+      duration: 800,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200,
+    });
+
+    // Password logic
+    const PASSWORD = "yourSecretPassword"; // <-- change this to your class password!
+    const passwordBox = document.getElementById('password-box');
+    const secretContent = document.getElementById('secret-content');
+    const passwordInput = document.getElementById('password-input');
+    const passwordBtn = document.getElementById('password-btn');
+    const errorMsg = document.getElementById('error-msg');
+
+    function checkPassword() {
+      if (passwordInput.value === PASSWORD) {
+        passwordBox.classList.add('hidden');
+        secretContent.classList.remove('hidden');
+      } else {
+        errorMsg.textContent = "Hibás jelszó! Próbáld újra.";
+        errorMsg.classList.remove('hidden');
+        passwordInput.value = "";
+        passwordInput.focus();
+      }
     }
+
+    passwordBtn.addEventListener('click', checkPassword);
+    passwordInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') checkPassword();
+    });
   </script>
-  <div id="secret-content">
-    <h1>Welcome to the XD Secret Page!</h1>
-    <p>This content is password gated (but not really secure).</p>
-  </div>
 </body>
 </html>
