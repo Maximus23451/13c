@@ -4,9 +4,23 @@
   <meta charset="UTF-8">
   <title>XD Hidden Page</title>
   <meta name="robots" content="noindex">
+  <style>
+    #secret-content { display: none; }
+  </style>
 </head>
 <body>
-  <h1>Welcome to the secret XD page!</h1>
-  <p>This page is only accessible if you know the direct URL.</p>
+  <script>
+    const PASSWORD = "Macko";
+    const userInput = prompt("Enter the password to access this page:");
+    if (userInput === PASSWORD) {
+      document.getElementById('secret-content').style.display = 'block';
+    } else {
+      document.write("<h2>Incorrect password.</h2>");
+    }
+  </script>
+  <div id="secret-content">
+    <h1>Welcome to the XD Secret Page!</h1>
+    <p>This content is password gated (but not really secure).</p>
+  </div>
 </body>
 </html>
